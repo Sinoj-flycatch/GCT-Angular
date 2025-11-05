@@ -1,0 +1,34 @@
+.sidebar-container{
+    width: 264px;
+    height: 100%;
+    background: #FCFCFC;
+    padding: 42px 19px 72px 19px;
+}
+.sidebar-menu-items-container{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+.sidebar-menu-items{
+    width: 100%;
+    height: 52px;
+    border-radius: 8px;
+    display: flex;
+    padding: 14px 25px;
+    color: #1E1E1ECC;
+    align-items: center;
+    gap: 16px;
+    font-family: Urbanist;
+font-weight: 400;
+font-style: Regular;
+font-size: 18px;
+line-height: 100%;
+letter-spacing: 0%;
+
+
+}
+.sidebar-menu-items.isActive{
+    color: #FCFCFC;
+    background: #F01F35;
+}

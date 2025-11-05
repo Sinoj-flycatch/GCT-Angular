@@ -1,0 +1,33 @@
+<div class="login-wraper">
+    <div class="logo-sec">
+        <img src="/images/logo.svg" alt="">
+        <p>Green Car Technology</p>
+    </div>
+    <div class="form-section">
+        <h2>Login</h2>
+        <p>Enter your login credentials</p>
+        <form [formGroup]="loginForm" (submit)="onSubmit()" class="login-form">
+            <app-text-input 
+                [error]="validateInput('username')" 
+                name="userName" 
+                formControlName="username"
+                placeholder="Username" 
+                label="Username" 
+                width="464px" 
+                height="56px">
+            </app-text-input>
+            <app-text-input 
+                [error]="validateInput('password')" 
+                type="password" 
+                formControlName="password" 
+                name="password" 
+                placeholder="Password"
+                label="Password" 
+                width="464px" 
+                height="56px">
+            </app-text-input>
+            <p-button type="submit" class="login-button" label="Submit"> </p-button>
+        </form>
+    </div>
+    <img class="login-bg" src="/images/login-wavy.svg" alt="">
+</div>

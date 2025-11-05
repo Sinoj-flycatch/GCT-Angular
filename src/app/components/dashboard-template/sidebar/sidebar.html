@@ -1,0 +1,12 @@
+<div class="sidebar-container">
+    <div class="sidebar-logo-section">
+        <img src="/images/logo.svg" alt="">
+        <h5>Green Car Technology</h5>
+    </div>
+    <div class="sidebar-menu-items-container">
+        <div (click)="navigate(item.path[0])" *ngFor="let item of menuItems" class="sidebar-menu-items" [ngClass]="{'isActive':isActive(item)}">
+            <img [src]="isActive(item)? item.iconActive : item.icon"/>
+            <p>{{item.item}}</p>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,8 @@
+<div [style.width]="width()" class="text-input-root">
+    <label [for]="id()">{{label()}}</label>
+    <input [type]="type()" [value]="internalValue" (input)="onInput($event)" [disabled]="disabled" (blur)="onBlur()" [name]="name()" [style.height]="height()" pInputText [id]="id()" [placeholder]="placeholder()"/>
+    @if(error()){
+        <small>{{error()}}</small>
+    }
+</div>
+ 
