@@ -4,12 +4,13 @@ import { ButtonModule } from 'primeng/button';
 import {
   FormControl,
   FormGroup,
-  FormsModule,
-  NgForm,
   ReactiveFormsModule,
   Validators,
 } from '@angular/forms';
 import { InputValidatorService } from '../../services/input-validator-service';
+import { ApiService } from '../../services/apiServices/api-service';
+import { LoginService } from '../../services/loginServices/login-service';
+
 @Component({
   selector: 'app-login-page',
   imports: [TextInput, ButtonModule, ReactiveFormsModule],
@@ -18,6 +19,8 @@ import { InputValidatorService } from '../../services/input-validator-service';
 })
 export class LoginPage {
   validatorService = inject(InputValidatorService);
+  loginService = inject(LoginService)
+  apiServices = inject(ApiService)
   loginForm = new FormGroup({
     username: new FormControl('', {
       validators: [Validators.required, Validators.maxLength(10)],
@@ -28,10 +31,8 @@ export class LoginPage {
   onSubmit(): void {
     this.formSubmitted = true;
     if (this.loginForm.valid) {
-      console.log(this.loginForm.value);
-      console.log(this.loginForm.get('password')?.hasError('required'));
-      console.log(this.loginForm.touched);
-      this.formSubmitted = true;
+      this.loginService.loginApi(this.loginForm.value.username as string,this.loginForm.value.password as string)
+      this.formSubmitted = false;
     }
   }
   validateInput(controlName: string):string {
@@ -49,4 +50,5 @@ export class LoginPage {
       },
     },this.loginForm.get(controlName),this.formSubmitted);
   }
+  
 }

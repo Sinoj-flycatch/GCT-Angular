@@ -13,7 +13,8 @@ export class Sidebar {
     item: "Dashboard",
     icon: "/icons/dashboard-black.svg",
     iconActive:"/icons/dashboard-white.svg",
-    path:["/dashboard","/profile-info"]
+    path:["/dashboard","/profile-info"],
+    allowedUsers:["staff",]
   },
   {
     item: "Branches",
