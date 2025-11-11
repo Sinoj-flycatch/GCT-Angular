@@ -29,12 +29,18 @@ export class LoginService {
     } = {username,password}
     this.apiServices.post<LoginResponse,any>("/login/",data).subscribe({
       next:(res)=>{
+        
         this.authServices.setToken(res?.results?.access)
         localStorage.setItem("role",res?.results?.role)
         localStorage.setItem("name",res?.results?.full_name)
         this.router.navigate(["/dashboard"])
+        this.showSuccess()
       },
       error:(err)=>console.log(err)
     })
   }
+
+  showSuccess() {
+        alert("success")
+    }
 }

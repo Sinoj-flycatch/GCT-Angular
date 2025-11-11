@@ -1,11 +1,10 @@
 import { TestBed } from '@angular/core/testing';
 import { HttpInterceptorFn } from '@angular/common/http';
-
-import { authReirectInterceptorInterceptor } from './auth-reirect-interceptor-interceptor';
+import { authReirectInterceptor } from './auth-reirect-interceptor';
 
 describe('authReirectInterceptorInterceptor', () => {
   const interceptor: HttpInterceptorFn = (req, next) => 
-    TestBed.runInInjectionContext(() => authReirectInterceptorInterceptor(req, next));
+    TestBed.runInInjectionContext(() => authReirectInterceptor(req, next));
 
   beforeEach(() => {
     TestBed.configureTestingModule({});

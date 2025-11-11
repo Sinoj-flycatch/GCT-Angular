@@ -1,10 +1,8 @@
 import { Component, forwardRef, input, model } from '@angular/core';
 import {ControlValueAccessor, FormControl, FormsModule, NG_VALUE_ACCESSOR, ReactiveFormsModule} from '@angular/forms'
-import { InputTextModule } from 'primeng/inputtext';
-
 @Component({
   selector: 'app-text-input',
-  imports: [InputTextModule],
+  imports: [],
   templateUrl: './text-input.html',
   styleUrl: './text-input.css',
   providers: [

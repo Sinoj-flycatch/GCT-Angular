@@ -1,6 +1,5 @@
 import { Component, inject } from '@angular/core';
 import { TextInput } from '../../components/commonComponents/text-input/text-input';
-import { ButtonModule } from 'primeng/button';
 import {
   FormControl,
   FormGroup,
@@ -13,7 +12,7 @@ import { LoginService } from '../../services/loginServices/login-service';
 
 @Component({
   selector: 'app-login-page',
-  imports: [TextInput, ButtonModule, ReactiveFormsModule],
+  imports: [TextInput, ReactiveFormsModule,],
   templateUrl: './login-page.html',
   styleUrl: './login-page.css',
 })
@@ -21,11 +20,12 @@ export class LoginPage {
   validatorService = inject(InputValidatorService);
   loginService = inject(LoginService)
   apiServices = inject(ApiService)
+  name:string = "sinoj"
   loginForm = new FormGroup({
     username: new FormControl('', {
-      validators: [Validators.required, Validators.maxLength(10)],
+      validators: [Validators.required, Validators.maxLength(100),Validators.minLength(4)],
     }),
-    password: new FormControl('', { validators: [Validators.required, Validators.minLength(3)] }),
+    password: new FormControl('', { validators: [Validators.required, Validators.minLength(4),Validators.maxLength(100)] }),
   });
   formSubmitted = false;
   onSubmit(): void {
@@ -45,7 +45,7 @@ export class LoginPage {
         },
         password: {
           required: 'Password is required',
-          minlength: 'Password must be at least 6 characters long',
+          minlength: 'Password must be at least 4 characters long',
         },
       },
     },this.loginForm.get(controlName),this.formSubmitted);

@@ -1,12 +1,28 @@
 <div class="sidebar-container">
-    <div class="sidebar-logo-section">
-        <img src="/images/logo.svg" alt="">
-        <h5>Green Car Technology</h5>
+  <div class="sidebar-logo-section">
+    <img src="/images/logo.svg" alt="" />
+    <h5>Green Car Technology</h5>
+  </div>
+  <div class="sidebar-menu-items-container">
+    @for (item of menuItems; track item) { @if (item.allowedUser.includes(userRole)) {
+    <div
+      (click)="navigate(item.path[0])"
+      class="sidebar-menu-items"
+      [ngClass]="{ isActive: isActive(item) }"
+    >
+      <img [src]="isActive(item) ? item.iconActive : item.icon" />
+      <p>{{ item.item }}</p>
     </div>
-    <div class="sidebar-menu-items-container">
-        <div (click)="navigate(item.path[0])" *ngFor="let item of menuItems" class="sidebar-menu-items" [ngClass]="{'isActive':isActive(item)}">
-            <img [src]="isActive(item)? item.iconActive : item.icon"/>
-            <p>{{item.item}}</p>
-        </div>
+    } }
+    <div class="menuitems-lowersection">
+      <div class="sidebar-menu-items">
+        <img src="/icons/settings.svg" />
+        <p>settings</p>
+      </div>
+      <div (click)="handleLogout()" class="sidebar-menu-items">
+        <img src="/icons/logout.svg" />
+        <p>Log out</p>
+      </div>
     </div>
+  </div>
 </div>
