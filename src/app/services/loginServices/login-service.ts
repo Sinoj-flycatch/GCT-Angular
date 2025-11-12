@@ -2,6 +2,7 @@ import { inject, Injectable } from '@angular/core';
 import { ApiService } from '../apiServices/api-service';
 import { AuthServices } from '../authServices/auth-services';
 import { Router } from '@angular/router';
+import { MatSnackBar } from '@angular/material/snack-bar';
 export interface LoginResponse {
     status:     string;
     message:    string;
@@ -21,6 +22,7 @@ export interface LoginResults {
 export class LoginService {
   apiServices = inject(ApiService)
   authServices = inject(AuthServices)
+   snackBar  = inject(MatSnackBar)
   router = inject(Router)
   loginApi(username:string,password:string){
     const data:{
@@ -41,6 +43,10 @@ export class LoginService {
   }
 
   showSuccess() {
-        alert("success")
+    this.snackBar.open("login Success","close",{
+      duration: 3000,
+      horizontalPosition: 'right',
+      verticalPosition: 'top',  
+    })
     }
 }

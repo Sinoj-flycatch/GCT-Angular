@@ -1,5 +1,6 @@
 import {
   ApplicationConfig,
+  importProvidersFrom,
   provideBrowserGlobalErrorListeners,
   provideZoneChangeDetection,
 } from '@angular/core';
@@ -10,7 +11,9 @@ import { provideHttpClient, withInterceptors } from '@angular/common/http';
 import { httpInterceptor } from './interceptors/http/http-interceptor';
 import { environment } from '../environments/environment';
 import { authReirectInterceptor } from './interceptors/authRedirectInterceptor/auth-reirect-interceptor';
-
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+import { en_US, provideNzI18n } from 'ng-zorro-antd/i18n';
 export const appConfig: ApplicationConfig = {
   providers: [
     provideBrowserGlobalErrorListeners(),
@@ -19,5 +22,9 @@ export const appConfig: ApplicationConfig = {
     provideClientHydration(withEventReplay()),
     provideHttpClient(withInterceptors([httpInterceptor,authReirectInterceptor])),
     { provide: 'ENV', useValue: environment },
+    importProvidersFrom(MatSnackBarModule),
+    provideNzI18n(en_US), 
+    provideAnimationsAsync(), 
+
   ],
 };

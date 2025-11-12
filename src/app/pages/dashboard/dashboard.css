@@ -1,0 +1,21 @@
+.dashboard-welcome{
+    font-family: Urbanist;
+font-weight: 500;
+font-style: Medium;
+font-size: 22px;
+line-height: 24px;
+letter-spacing: 0%;
+color: #1E1E1ECC;
+}
+.dashboard-wraper{
+    padding-top: 18px;
+}
+.date-range-piker{
+    border-radius: 4px;
+    background: #F5F5F5 !important;
+}
+.summary-card-section{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 22px;
+}

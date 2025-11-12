@@ -5,13 +5,14 @@ import { catchError, throwError } from 'rxjs';
 
 export const authReirectInterceptor: HttpInterceptorFn = (req, next) => {
   const router = inject(Router)
-  return next(req).pipe(
-    catchError((error:HttpErrorResponse)=>{
-      if(error.status==401){
-        localStorage.clear()
-        router.navigate(["/login/"])
-      }
-      return throwError(()=>error);
-    })
-  );
+  // return next(req).pipe(
+  //   catchError((error:HttpErrorResponse)=>{
+  //     if(error.status==401){
+  //       localStorage.clear()
+  //       router.navigate(["/login/"])
+  //     }
+  //     return throwError(()=>error);
+  //   })
+  // );
+  return next(req)
 };

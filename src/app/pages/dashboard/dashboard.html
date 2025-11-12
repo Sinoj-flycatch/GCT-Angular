@@ -1,0 +1,30 @@
+<div class="w-full h-full dashboard-wraper">
+  <div class="flex justify-between align-middle w-full mt-[18px]">
+    <h1 class="dashboard-welcome">Good Morning, Ryan Cole 👋</h1>
+    <nz-range-picker
+      class="h-9 min-w-[200px] border-r-[50%] date-range-piker"
+      nzSeparator="-"
+      [(ngModel)]="date"
+      (ngModelChange)="onChange($event)"
+    ></nz-range-picker>
+  </div>
+  <app-dashboard-headings
+    bg="linear-gradient(90deg, rgba(89, 188, 255, 0.2) 25.33%, rgba(202, 234, 255, 0.2) 100%)"
+    heading="Booking Summary"
+    icon="/icons/bookings-white.svg"
+    iconBg="#59BCFF"
+    textColor="#59BCFF"
+  ></app-dashboard-headings>
+  <div class="summary-card-section">
+    <app-booking-summary-card></app-booking-summary-card>
+    <app-booking-summary-card></app-booking-summary-card>
+    <app-booking-summary-card></app-booking-summary-card>
+  </div>
+  <app-dashboard-headings
+    bg="linear-gradient(90deg, rgba(34, 54, 87, 0.2) 25.33%, rgba(34, 54, 87, 0.04) 100%)"
+    heading="Payment Summary"
+    icon="/icons/card.svg"
+    iconBg="#223657"
+    textColor="#1E1E1ECC"
+  ></app-dashboard-headings>
+</div>

@@ -1,0 +1,6 @@
+.card-wrapper{
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    background: linear-gradient(138.32deg, #8ABB8F 3.31%, #F0F7FF 86.34%);
+    border-radius: 8px;
+}
