@@ -1,3 +1,14 @@
-<div class="card-wrapper">
-    
+<div [style.background]="bg()" class="card-wrapper">
+    <div class="card-head">
+        <h5>{{heading()}}</h5>
+        <h6>From Booking Summary</h6>
+    </div>
+    <div class="card-count">
+        <div [style.background]="iconBg()" class="icon-container">
+            <img src="/icons/calender-white.svg" alt="">
+        </div>
+        <div [style.background]="countBG()" class="count-container">
+            {{count()}}
+        </div>
+    </div>
 </div>

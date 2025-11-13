@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, signal } from '@angular/core';
 import { TextInput } from '../../components/commonComponents/text-input/text-input';
 import {
   FormControl,
@@ -9,10 +9,12 @@ import {
 import { InputValidatorService } from '../../services/input-validator-service';
 import { ApiService } from '../../services/apiServices/api-service';
 import { LoginService } from '../../services/loginServices/login-service';
+import { NzButtonModule } from 'ng-zorro-antd/button';
+import { NzIconModule } from 'ng-zorro-antd/icon';
 
 @Component({
   selector: 'app-login-page',
-  imports: [TextInput, ReactiveFormsModule,],
+  imports: [TextInput, ReactiveFormsModule,NzButtonModule,NzIconModule],
   templateUrl: './login-page.html',
   styleUrl: './login-page.css',
 })
@@ -20,6 +22,7 @@ export class LoginPage {
   validatorService = inject(InputValidatorService);
   loginService = inject(LoginService)
   apiServices = inject(ApiService)
+  isLoginLoading = signal(false)
   name:string = "sinoj"
   loginForm = new FormGroup({
     username: new FormControl('', {
@@ -31,7 +34,7 @@ export class LoginPage {
   onSubmit(): void {
     this.formSubmitted = true;
     if (this.loginForm.valid) {
-      this.loginService.loginApi(this.loginForm.value.username as string,this.loginForm.value.password as string)
+      this.loginService.loginApi(this.loginForm.value.username as string,this.loginForm.value.password as string,this.isLoginLoading)
       this.formSubmitted = false;
     }
   }

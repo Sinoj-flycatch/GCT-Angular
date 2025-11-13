@@ -1,8 +1,11 @@
 import { Component, forwardRef, input, model } from '@angular/core';
-import {ControlValueAccessor, FormControl, FormsModule, NG_VALUE_ACCESSOR, ReactiveFormsModule} from '@angular/forms'
+import {ControlValueAccessor, NG_VALUE_ACCESSOR} from '@angular/forms'
+import { NzIconModule } from 'ng-zorro-antd/icon';
+import { NzInputModule } from 'ng-zorro-antd/input';
+
 @Component({
   selector: 'app-text-input',
-  imports: [],
+  imports: [NzInputModule,NzIconModule],
   templateUrl: './text-input.html',
   styleUrl: './text-input.css',
   providers: [

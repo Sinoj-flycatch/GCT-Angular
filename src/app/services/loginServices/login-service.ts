@@ -1,4 +1,4 @@
-import { inject, Injectable } from '@angular/core';
+import { inject, Injectable, WritableSignal } from '@angular/core';
 import { ApiService } from '../apiServices/api-service';
 import { AuthServices } from '../authServices/auth-services';
 import { Router } from '@angular/router';
@@ -24,21 +24,29 @@ export class LoginService {
   authServices = inject(AuthServices)
    snackBar  = inject(MatSnackBar)
   router = inject(Router)
-  loginApi(username:string,password:string){
+  loginApi(username:string,password:string,loading:WritableSignal<boolean>){
     const data:{
       username:string;
       password:string;
     } = {username,password}
+    console.log(loading);
+    loading.set(true)
+    console.log(loading);
+    
     this.apiServices.post<LoginResponse,any>("/login/",data).subscribe({
       next:(res)=>{
-        
         this.authServices.setToken(res?.results?.access)
         localStorage.setItem("role",res?.results?.role)
         localStorage.setItem("name",res?.results?.full_name)
         this.router.navigate(["/dashboard"])
         this.showSuccess()
+        loading.set(false)
+        console.log(loading);
       },
-      error:(err)=>console.log(err)
+      error:(err)=>{
+        loading.set(false)
+        console.log(err,loading)
+      }
     })
   }
 

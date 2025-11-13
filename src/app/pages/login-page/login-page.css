@@ -70,4 +70,6 @@ margin-top: 14px;
     justify-content: center;
     align-items: center;
     border-radius: 3px;
+    display: flex;
+    align-items: center;
 }

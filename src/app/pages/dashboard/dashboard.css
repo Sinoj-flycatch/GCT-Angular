@@ -9,13 +9,27 @@ color: #1E1E1ECC;
 }
 .dashboard-wraper{
     padding-top: 18px;
+    width: 100%;
+    height: calc(100vh - 76px);
+    display: flex;
+    flex-direction: column;
+}
+.scrollable{
+    width: 100%;
+    flex: 1;
+    overflow: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+    margin-top: 22px;
 }
 .date-range-piker{
     border-radius: 4px;
-    background: #F5F5F5 !important;
+    background: var(--white-100)!important;
 }
 .summary-card-section{
     display: grid;
     grid-template-columns: repeat(3,1fr);
     gap: 22px;
+    margin-bottom: 22px;
 }

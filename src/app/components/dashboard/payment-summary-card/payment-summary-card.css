@@ -1,0 +1,133 @@
+.payment-card-wrapper {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    background: linear-gradient(138.32deg, #8ABB8F 3.31%, #F0F7FF 86.34%);
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    color: white !important;
+    box-shadow: 0px 0px 12px 4px #1E1E1E0D;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin-bottom: 0px;
+    color: white;
+}
+
+.head-section {
+    width: 100%;
+    padding: 22px 22px 0px 22px;
+}
+
+.head-section h5 {
+    font-family: Urbanist;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 140%;
+    letter-spacing: 0%;
+
+}
+
+.head-section h6 {
+    font-family: Urbanist;
+    font-weight: 600;
+    font-style: SemiBold;
+    font-size: 14px;
+    line-height: 100%;
+    letter-spacing: 0%;
+
+
+}
+
+.value-sec {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 38px;
+}
+
+.icon-container,
+.icon2-container {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: #6359E9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.value-container {
+    width: 100%;
+    display: flex;
+    gap: 14px;
+    align-items: end;
+}
+
+.value-section-wrapper {
+    width: 90%;
+    height: 126px;
+    position: relative;
+}
+
+.value-section {
+    width: calc(100% - 12px);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    padding: 22px;
+    font-family: Unbounded;
+    font-weight: 700;
+    font-style: Bold;
+    font-size: 32px;
+    line-height: 99%;
+    letter-spacing: 0%;
+    background: linear-gradient(180deg, rgba(99, 89, 233, 0.2) 0%, #6359E9 100%);
+    border-radius: 8px;
+
+
+}
+.indecator{
+    width: 39px;
+    height: 26px;
+    border: 1.5px solid #FCFCFC;
+    background: linear-gradient(360deg, #6359E9 0%, rgba(99, 89, 233, 0.2) 100%);
+    right: 0px;
+    top: 50%;
+    position: absolute;
+    transform: translateY(-50%);
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    padding: 0px 8px;
+}
+.dot{
+    width: 11px;
+    height: 11px;
+    border-radius: 50%;
+    background: white;
+}
+
+.value-section .inr{
+    font-family: Unbounded;
+font-weight: 700;
+font-style: Bold;
+font-size: 18px;
+line-height: 99%;
+letter-spacing: 0%;
+
+}
+.value-icon-sec{
+    height: 100%;
+    padding: 0px 5px 5px 0px;
+    display: flex;
+    align-items: end;
+}
