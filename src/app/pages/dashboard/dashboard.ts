@@ -1,4 +1,4 @@
-import { Component, computed, inject } from '@angular/core';
+import { Component, computed, effect, inject, signal } from '@angular/core';
 import { DashboardTemplate } from '../../components/dashboard-template/dashboard-template';
 import { ApiService } from '../../services/apiServices/api-service';
 import { NzDatePickerModule } from 'ng-zorro-antd/date-picker';
@@ -20,9 +20,14 @@ export class Dashboard {
   dashboardSummary = this.dashboardServices.dashboardSummaryData
   today:Date = new Date()
   
-  date:Date[] = [this.today,this.today]
+  date= signal<Date[]>([this.today,this.today])
    onChange(result: Date[]): void {
-    this.date = result
+    this.date.set(result)
+  }
+  constructor(){
+    effect(()=>{
+      this.getDashboardDetails()
+    })
   }
   dashBoardPaymentCardItems = computed(()=>[
     {
@@ -94,13 +99,11 @@ export class Dashboard {
       iconBg: "#F01F35",
     },
   ])
-  ngOnInit(){
-    this.getDashboardDetails()
-  }
   getDashboardDetails(){
+    const [start,end] = this.date()
     const params:BookingSummaryParams = {
-    booked_date_after:dayjs(this.date[0]).format("YYYY-MM-DD"),
-    booked_date_before:dayjs(this.date[1]).format("YYYY-MM-DD")
+    booked_date_after:dayjs(start).format("YYYY-MM-DD"),
+    booked_date_before:dayjs(end).format("YYYY-MM-DD")
   }
     this.dashboardServices.getDashboardSummary(params)
   }
