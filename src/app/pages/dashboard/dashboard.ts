@@ -1,12 +1,12 @@
 import { Component, computed, effect, inject, signal } from '@angular/core';
-import { DashboardTemplate } from '../../components/dashboard-template/dashboard-template';
-import { ApiService } from '../../services/apiServices/api-service';
+import { DashboardTemplate } from '../../shared/components/dashboard-template/dashboard-template';
+import { ApiService } from '../../core/services/apiServices/api-service';
 import { NzDatePickerModule } from 'ng-zorro-antd/date-picker';
 import { FormsModule } from '@angular/forms';
-import { DashboardHeadings } from '../../components/dashboard/dashboard-headings/dashboard-headings';
-import { BookingSummaryCard } from '../../components/dashboard/booking-summary-card/booking-summary-card';
-import { PaymentSummaryCard } from '../../components/dashboard/payment-summary-card/payment-summary-card';
-import { DashboardServices } from '../../services/dashboardServices/dashboard-services';
+import { DashboardHeadings } from '../../shared/components/dashboard/dashboard-headings/dashboard-headings';
+import { BookingSummaryCard } from '../../shared/components/dashboard/booking-summary-card/booking-summary-card';
+import { PaymentSummaryCard } from '../../shared/components/dashboard/payment-summary-card/payment-summary-card';
+import { DashboardServices } from '../../core/services/dashboardServices/dashboard-services';
 import { BookingSummaryParams } from '../../shared/interfaces/dashboardInterface';
 import dayjs from 'dayjs';
 @Component({

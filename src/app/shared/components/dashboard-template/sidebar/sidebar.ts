@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { menuItems } from '../../../shared/constants/authConstants';
+import { menuItems } from '../../../constants/authConstants';
 @Component({
   selector: 'app-sidebar',
   imports: [CommonModule],

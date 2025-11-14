@@ -1,14 +1,14 @@
 import { Component, inject, signal } from '@angular/core';
-import { TextInput } from '../../components/commonComponents/text-input/text-input';
+import { TextInput } from '../../shared/components/commonComponents/text-input/text-input';
 import {
   FormControl,
   FormGroup,
   ReactiveFormsModule,
   Validators,
 } from '@angular/forms';
-import { InputValidatorService } from '../../services/input-validator-service';
-import { ApiService } from '../../services/apiServices/api-service';
-import { LoginService } from '../../services/loginServices/login-service';
+import { InputValidatorService } from '../../core/services/input-validator-service';
+import { ApiService } from '../../core/services/apiServices/api-service';
+import { LoginService } from '../../core/services/loginServices/login-service';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { NzIconModule } from 'ng-zorro-antd/icon';
 

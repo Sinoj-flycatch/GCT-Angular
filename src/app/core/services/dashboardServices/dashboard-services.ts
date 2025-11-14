@@ -2,7 +2,7 @@ import { inject, Injectable, signal } from '@angular/core';
 import { ApiService } from '../apiServices/api-service';
 import { response } from 'express';
 import { error } from 'console';
-import { BookingSummaryMessage, BookingSummaryParams, BookingSummaryResponses } from '../../shared/interfaces/dashboardInterface';
+import { BookingSummaryMessage, BookingSummaryParams, BookingSummaryResponses } from '../../../shared/interfaces/dashboardInterface';
 
 @Injectable({
   providedIn: 'root'
