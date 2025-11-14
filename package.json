@@ -36,6 +36,7 @@
     "@angular/ssr": "^20.3.6",
     "@primeuix/themes": "^1.2.5",
     "@tailwindcss/postcss": "^4.1.17",
+    "dayjs": "^1.11.19",
     "express": "^5.1.0",
     "ng-zorro-antd": "^20.4.0",
     "postcss": "^8.5.6",

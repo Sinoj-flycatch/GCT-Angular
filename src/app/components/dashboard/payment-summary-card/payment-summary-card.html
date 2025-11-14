@@ -10,7 +10,7 @@
         <div class="value-container">
             <div class="value-section-wrapper">
                 <div [style.background]="countBg()" class="value-section">
-                    <span class="inr">INR </span><span>{{count()}}</span>
+                    <span class="inr">INR </span><span>{{count()|twoDecimal}}</span>
                 </div>
                 <div [style.background]="indecatorBg()" class="indecator">
                     <div class="dot"></div>

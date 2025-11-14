@@ -15,9 +15,9 @@
       icon="/icons/bookings-white.svg"
       iconBg="#59BCFF"
       textColor="#59BCFF"
-    ></app-dashboard-headings>
+    ></app-dashboard-headings>  
     <div class="summary-card-section">
-      @for(item of dashboardCardItems; track item.bg){
+      @for(item of dashboardCardItems(); track item.bg){
         <app-booking-summary-card [bg]="item.bg" [count]="item.count" [countBG]="item.countBg" [heading]="item.heading" [icon]="item.icon" [iconBg]="item.iconBg"></app-booking-summary-card>
       }
     </div>
@@ -29,7 +29,7 @@
       textColor="#1E1E1ECC"
     ></app-dashboard-headings>
     <div class="summary-card-section">
-      @for(item of dashBoardPaymentCardItems ; track item.bg){
+      @for(item of dashBoardPaymentCardItems() ; track item.bg){
         <app-payment-summary-card [bg]="item.bg" [count]="item.Amount" [countBg]="item.countBg" [heading]="item.heading" [iconBg]="item.iconBg" [indecatorBg]="item.indicatorBg" ></app-payment-summary-card>
       }
     </div>

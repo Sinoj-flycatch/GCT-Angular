@@ -1,23 +1,5 @@
 @import "tailwindcss";
 @import url('https://fonts.googleapis.com/css2?family=Urbanist:wght@400;500;600;700&display=swap');
-body {
-  margin: 0;
-  padding: 0;
-}
-/* Reset all elements */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-* {
-  font-family: "Urbanist", sans-serif;
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
 :root {
   --primary-100: #f01f350d;
   --primary-200: #f01f351a;
@@ -39,4 +21,25 @@ body {
   --white-100: #f5f5f5;
   --white-200: #fcfcfc;
   --white-300: #ffffff;
+}
+body {
+  margin: 0;
+  padding: 0;
+}
+
+/* Reset all elements */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+* {
+  font-family: "Urbanist", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+p{
+  margin-bottom: 0px !important;
 }

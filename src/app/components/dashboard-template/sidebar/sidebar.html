@@ -1,7 +1,7 @@
 <div class="sidebar-container">
   <div class="sidebar-logo-section">
     <img src="/images/logo.svg" alt="" />
-    <h5>Green Car Technology</h5>
+    <p>Green Car Technology</p>
   </div>
   <div class="sidebar-menu-items-container">
     @for (item of menuItems; track item) { @if (item.allowedUser.includes(userRole)) {
@@ -14,7 +14,8 @@
       <p>{{ item.item }}</p>
     </div>
     } }
-    <div class="menuitems-lowersection">
+  </div>
+  <div class="menuitems-lowersection">
       <div class="sidebar-menu-items">
         <img src="/icons/settings.svg" />
         <p>settings</p>
@@ -24,5 +25,4 @@
         <p>Log out</p>
       </div>
     </div>
-  </div>
 </div>

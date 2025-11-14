@@ -1,8 +1,9 @@
 import { Component, input } from '@angular/core';
+import { TwoDecimalPipe } from '../../../shared/pipes/two-decimal-pipe';
 
 @Component({
   selector: 'app-payment-summary-card',
-  imports: [],
+  imports: [TwoDecimalPipe],
   templateUrl: './payment-summary-card.html',
   styleUrl: './payment-summary-card.css'
 })
