@@ -14,6 +14,12 @@ describe('PaymentSummaryCard', () => {
 
     fixture = TestBed.createComponent(PaymentSummaryCard);
     component = fixture.componentInstance;
+    fixture.componentRef.setInput('heading', 'Total Revenue');
+    fixture.componentRef.setInput('iconBg', '#eee');
+    fixture.componentRef.setInput('count', 2500.50);
+    fixture.componentRef.setInput('countBg', 'blue');
+    fixture.componentRef.setInput('indecatorBg', 'green');
+    fixture.componentRef.setInput('bg', 'white');
     fixture.detectChanges();
   });
 

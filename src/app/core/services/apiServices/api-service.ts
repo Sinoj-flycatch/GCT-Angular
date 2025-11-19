@@ -12,15 +12,12 @@ export class ApiService {
   get<T, U extends Record<string, any>>(url: string, params?: U): Observable<T> {
     return this.http.get<T>(`${this.apiUrl}${url}`, { params });
   }
-
   post<T, U>(url: string, data: U): Observable<T> {
     return this.http.post<T>(`${this.apiUrl}${url}`, data);
   }
-
   put<T, U>(url: string, data: U): Observable<T> {
     return this.http.put<T>(`${this.apiUrl}${url}`, data);
   }
-
   patch<T, U>(url: string, data: U): Observable<T> {
     return this.http.patch<T>(`${this.apiUrl}${url}`, data);
   }

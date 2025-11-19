@@ -21,7 +21,7 @@ export const appConfig: ApplicationConfig = {
     provideRouter(routes),
     provideClientHydration(withEventReplay()),
     provideHttpClient(withInterceptors([httpInterceptor,authReirectInterceptor])),
-    { provide: 'ENV', useValue: environment },
+    
     importProvidersFrom(MatSnackBarModule),
     provideNzI18n(en_US), 
     provideAnimationsAsync(), 

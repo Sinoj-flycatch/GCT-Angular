@@ -44,6 +44,7 @@ export class LoginPage {
       messagesConfig: {
         username: {
           required: 'Username is required',
+          minlength: 'username must be at least 4 characters long',
           email:"please enter valid email"
         },
         password: {

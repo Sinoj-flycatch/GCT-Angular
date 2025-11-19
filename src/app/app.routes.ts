@@ -10,6 +10,7 @@ import { LoginPage } from './pages/login-page/login-page';
 import { authGuard } from './core/guards/authGuard/auth-guard';
 import { roleGuard } from './core/guards/roleGuard/role-guard';
 import { allowedUsers } from './shared/constants/authConstants';
+import { publicGuard } from './core/guards/publicGuard/public-guard';
 
 export const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
@@ -67,5 +68,5 @@ export const routes: Routes = [
       },
     ],
   },
-  { path: 'login', component: LoginPage },
+  { path: 'login', component: LoginPage ,canActivate:[publicGuard]},
 ];
