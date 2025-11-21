@@ -10,11 +10,10 @@ export class AuthServices {
   getRole():string | null{
     return localStorage.getItem("role")
   }
-
   setToken(token:string){
     localStorage.setItem("accessToken",token)
   }
-  isLoaggedIn():boolean{
+  isLoggedIn():boolean{
     if(this.getToken()){
       return true
     } 

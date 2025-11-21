@@ -68,5 +68,5 @@ export const routes: Routes = [
       },
     ],
   },
-  { path: 'login', component: LoginPage ,canActivate:[publicGuard]},
+  { path: 'login', component: LoginPage, canActivate: [publicGuard] },
 ];
